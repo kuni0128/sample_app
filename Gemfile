@@ -35,6 +35,8 @@ gem 'jbuilder', '2.6.1'
 # gem 'capistrano-rails', group: :development
 
 gem 'bootstrap-sass', '3.3.7'
+gem 'will_paginate', '3.1.5'
+gem 'bootstrap-will_paginate', '1.0.0'
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record
@@ -50,6 +52,9 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring', '2.0.2'
   gem 'spring-watcher-listen', '2.0.1'
+  gem 'ruby-debug-ide', '0.6.1.beta9'
+  gem 'debase'
+  gem 'faker', '1.7.3'
 end
 
 group :test do
