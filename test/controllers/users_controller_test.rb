@@ -2,8 +2,8 @@ require 'test_helper'
 
 class UsersControllerTest < ActionDispatch::IntegrationTest
   def setup
-    @user = users(:test_user)
-    @other_user = users(:test_user2)
+    @user = users(:wettinton)
+    @other_user = users(:mirrar)
   end
 
   test "should get new" do
