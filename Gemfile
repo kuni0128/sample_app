@@ -52,6 +52,7 @@ group :development do
   gem 'spring-watcher-listen', '2.0.1'
   gem 'ruby-debug-ide', '0.6.1.beta9'
   gem 'debase'
+  gem 'faker', '1.7.3'
 end
 
 group :test do
