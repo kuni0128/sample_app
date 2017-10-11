@@ -31,3 +31,6 @@
 
 # Ignore idea files.
 /.idea/*
+
+# Ignore erd file.
+erd.pdf

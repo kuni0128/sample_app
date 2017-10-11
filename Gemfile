@@ -55,6 +55,7 @@ group :development do
   gem 'ruby-debug-ide', '0.6.1.beta9'
   gem 'debase'
   gem 'faker', '1.7.3'
+  gem 'rails-erd'
 end
 
 group :test do
