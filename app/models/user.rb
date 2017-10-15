@@ -11,4 +11,8 @@ class User < ApplicationRecord
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine::cost
     BCrypt::Password.create(string, cost: cost)
   end
+
+  def feed
+    Micropost.where('user_id = ?', id)
+  end
 end
