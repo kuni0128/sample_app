@@ -34,3 +34,6 @@
 
 # Ignore erd file.
 erd.pdf
+
+# Ignore picture files.
+/public/uploads/micropost/picture/*
