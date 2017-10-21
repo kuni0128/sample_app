@@ -76,4 +76,14 @@ class UserTest < ActiveSupport::TestCase
       @user.destroy
     end
   end
+
+  test 'should follow and unfollow a user' do
+    wettinton = users(:wettinton)
+    mirrar = users(:mirrar)
+    assert_not wettinton.following?(mirrar)
+    wettinton.follow(mirrar)
+    assert wettinton.following?(mirrar)
+    wettinton.unfollow(mirrar)
+    assert_not wettinton.following?(mirrar)
+  end
 end
