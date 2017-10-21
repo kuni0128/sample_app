@@ -83,6 +83,7 @@ class UserTest < ActiveSupport::TestCase
     assert_not wettinton.following?(mirrar)
     wettinton.follow(mirrar)
     assert wettinton.following?(mirrar)
+    assert mirrar.followers.include?(wettinton)
     wettinton.unfollow(mirrar)
     assert_not wettinton.following?(mirrar)
   end
