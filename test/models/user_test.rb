@@ -87,4 +87,22 @@ class UserTest < ActiveSupport::TestCase
     wettinton.unfollow(mirrar)
     assert_not wettinton.following?(mirrar)
   end
+
+  test 'feed should have the right posts' do
+    wettinton = users(:wettinton)
+    mirrar = users(:mirrar)
+    prince = users(:prince)
+
+    mirrar.microposts.each do |post_following|
+      assert wettinton.feed.include?(post_following)
+    end
+
+    wettinton.microposts.each do |post_self|
+      assert wettinton.feed.inclue?(post_self)
+    end
+
+    prince.microposts.each do |post_unfollowed|
+      assert_not wettinton.feed.include?(post_unfollowed)
+    end
+  end
 end
