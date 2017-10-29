@@ -1,0 +1,16 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+one:
+  follower: wettinton
+  followed: mirrar
+
+two:
+  follower: wettinton
+  followed: jackson
+
+three:
+  follower: mirrar
+  followed: wettinton
+
+four:
+  follower: prince
+  followed: wettinton

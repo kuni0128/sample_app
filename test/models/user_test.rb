@@ -76,4 +76,33 @@ class UserTest < ActiveSupport::TestCase
       @user.destroy
     end
   end
+
+  test 'should follow and unfollow a user' do
+    wettinton = users(:wettinton)
+    prince = users(:prince)
+    assert_not wettinton.following?(prince)
+    wettinton.follow(prince)
+    assert wettinton.following?(prince)
+    assert prince.followers.include?(wettinton)
+    wettinton.unfollow(prince)
+    assert_not wettinton.following?(prince)
+  end
+
+  test 'feed should have the right posts' do
+    wettinton = users(:wettinton)
+    mirrar = users(:mirrar)
+    prince = users(:prince)
+
+    mirrar.microposts.each do |post_following|
+      assert wettinton.feed.include?(post_following)
+    end
+
+    wettinton.microposts.each do |post_self|
+      assert wettinton.feed.include?(post_self)
+    end
+
+    prince.microposts.each do |post_unfollowed|
+      assert_not wettinton.feed.include?(post_unfollowed)
+    end
+  end
 end
